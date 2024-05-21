@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,101 +8,48 @@
 </head>
 <body>
     <header>
+        <div class="logo">EliteCar</div>
         <nav>
-            <ul class="menu">
-                <li><a href="#home" class="nav-link" data-target="home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-target="about">Sobre</a></li>
-                <li><a href="#cars" class="nav-link" data-target="cars">Carros</a></li>
-                <li><a href="#contact" class="nav-link" data-target="contact">Contato</a></li>
+            <ul>
+                <li><a href="#" class="nav-link" onclick="showSection('home')">Início</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('vehicles')">Veículos</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('contact')">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="content-section active">
-            <h1>Bem-vindo à EliteCar</h1>
-            <p>Explore nossos carros e encontre o seu próximo veículo.</p>
-        </section>
-
-        <section id="about" class="content-section">
-            <h1>Sobre Nós</h1>
-            <p>Somos uma empresa dedicada a oferecer os melhores carros do mercado.</p>
-        </section>
-
-        <section id="filter">
-            <h2>Filtrar Carros</h2>
-            <label for="category">Categoria:</label>
-            <select id="category">
-                <option value="all">Todos</option>
-                <option value="esportivos">Esportivos</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-                <option value="hatchback">Hatchback</option>
-            </select>
-        </section>
-
-        <section id="cars" class="cards content-section">
-            <div class="card" data-category="esportivos">
-                <img src="https://i.pinimg.com/originals/97/e8/89/97e889ccb61d4366af3b710728ff0968.jpg" alt="Carro 1">
-                <h2>Nissan Skyline R34 GT-R</h2>
-                <p>R$ 1.550.000,00</p>
-                <button class="details-btn">Detalhes</button>
-                <button class="add-cart-btn">Adicionar ao Carrinho</button>
-            </div>
-            <div class="card" data-category="esportivos">
-                <img src="https://i.pinimg.com/736x/99/81/72/998172bf6b14e953e66e027d4e9ec1cc.jpg" alt="Carro 2">
-                <h2>Toyota Supra MK4</h2>
-                <p>R$ 790.000,00</p>
-                <button class="details-btn">Detalhes</button>
-                <button class="add-cart-btn">Adicionar ao Carrinho</button>
-            </div>
-            <div class="card" data-category="sedan">
-                <img src="https://i.ytimg.com/vi/nA5VXRTlYVg/maxresdefault.jpg" alt="Carro 3">
-                <h2>Honda Civic Si</h2>
-                <p>R$ 81.200,00</p>
-                <button class="details-btn">Detalhes</button>
-                <button class="add-cart-btn">Adicionar ao Carrinho</button>
-            </div>
-            <div class="card" data-category="suv">
-                <img src="https://carrosbemmontados.com.br/wp-content/uploads/2023/09/Jeep-Trackhawk-2.webp" alt="Carro 4">
-                <h2>Jeep Trackhawk</h2>
-                <p>R$ 270.000,00</p>
-                <button class="details-btn">Detalhes</button>
-                <button class="add-cart-btn">Adicionar ao Carrinho</button>
-            </div>
-            <div class="card" data-category="hatchback">
-                <img src="https://i.pinimg.com/736x/5f/d8/92/5fd892dd44a76ce1af352ecf69d61ea3.jpg" alt="Carro 5">
-                <h2>Golf GTI</h2>
-                <p>R$ 119.900,00</p>
-                <button class="details-btn">Detalhes</button>
-                <button class="add-cart-btn">Adicionar ao Carrinho</button>
-            </div>
-            <!-- Mais cards de carros -->
-        </section>
-
-        <section id="contact" class="content-section">
-            <h1>Contato</h1>
-            <p>Entre em contato conosco através do email: contato@vendadecarros.com</p>
-        </section>
-    </main>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-        </div>
+    <div id="home" class="container active">
+        <h2>Bem-vindo à EliteCar</h2>
+        <p>Explore nossa exclusiva seleção de veículos de alto padrão.</p>
     </div>
 
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>Carrinho de Compras</h2>
-            <ul id="cart-items"></ul>
-            <p id="cart-total"></p>
-            <button id="checkout-btn">Finalizar Compra</button>
+    <div id="vehicles" class="container">
+        <div class="card">
+            <img src="https://cdn.wallpapersafari.com/68/1/UaTRKH.jpg" alt="Veículo de Luxo">
+            <h3>Nissan Skyline R34 GT-R</h3>
+            <p>R$ 1.500.000,00
+            <p>Conforto, Estilo e Potência incomparável.</p>
+            <button onclick="alert('Obrigado pela compra, volte sempre!')">Comprar</button>
         </div>
+        <div class="card">
+            <img src="https://rare-gallery.com/thumbs/525245-Toyota-Supra.jpg" alt="Veiculo">
+            <h3>Toyota Supra MK4</h3>
+            <p>R$ 850.000,00</p>
+            <p>Desempenho e Elegância sem igual.</p>
+            <button onclick="alert('Obrigado pela compra, volte sempre!')">Comprar</button>
+        </div>
+        <!-- Repetir para outros veículos -->
     </div>
+
+    <div id="contact" class="container">
+        <h2>Fale Conosco</h2>
+        <p>Telefone: (48) 9999-9999</p>
+        <p>E-mail: contato@elitecar.com</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EliteCar. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
