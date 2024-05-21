@@ -1,164 +1,110 @@
-/* General Styles */
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset CSS e configurações básicas */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    font-size: 18px;
     color: #333;
+    overflow-x: hidden;
+    background: #f4f4f4;
+    height: 100%;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
 }
 
+/* Cabeçalho e navegação */
 header {
-    background: #2c3e50;
-    color: white;
-    padding: 1em 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    background: linear-gradient(to bottom, #005e8e 0%, #008fd7 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #18bc9c;
-}
-
-main {
-    padding: 2em;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
-
-#filter {
-    margin-bottom: 2em;
-    text-align: center;
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
-
-#filter h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-}
-
-#filter label {
-    font-size: 1.2em;
-    margin-right: 1em;
-}
-
-#filter select {
-    padding: 0.5em;
-    font-size: 1em;
-}
-
-.cards {
+nav ul {
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
 }
-
-.card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 250px;
-    transition: transform 0.3s;
+nav ul li {
+    padding: 0 15px;
 }
-
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.card h2 {
-    font-size: 1.5em;
-    margin: 0.5em 0;
-    text-align: center;
-}
-
-.card p {
-    font-size: 1.2em;
-    color: #18bc9c;
-    text-align: center;
-}
-
-.card button {
-    display: block;
-    width: 100%;
-    padding: 1em;
-    border: none;
-    background: #2c3e50;
+nav ul li a {
     color: white;
-    font-size: 1em;
+    font-size: 1.1rem;
+}
+nav ul li a:hover, nav ul li a.active {
+    text-decoration: underline;
+}
+
+/* Estilização das seções */
+.container {
+    display: none;
+    padding: 80px 50px 50px;
+    transition: all 0.5s ease;
+    min-height: 100vh;
+}
+.container.active {
+    display: block;
+}
+
+/* Cards de produtos e botões */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    width: 25%;
+    border-radius: 10px;
+}
+.card h3 {
+    margin-top: 10px;
+}
+.card p {
+    margin: 10px 0;
+    color: #666;
+}
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
 }
-
-.card button:hover {
-    background: #18bc9c;
+button:hover {
+    background-color: #218838;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
-
-.content-section {
-    display: none;
+/* Footer */
+footer {
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.content-section.active {
-    display: block;
-    opacity: 1;
-}
-
-.modal {
-    display: none;
+    padding: 20px 10px;
+    background-color: #333;
+    color: #fff;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: white;
-    padding: 2em;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5em;
-    cursor: pointer;
 }
